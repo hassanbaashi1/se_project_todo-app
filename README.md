@@ -27,5 +27,4 @@ A simple to-do list application that helps users manage their tasks efficiently.
 ## Deployment
 
 This project is deployed on GitHub Pages:
-
-git@github.com:hassanbaashi1/se_project_todo-app.git
+https://github.com/hassanbaashi1/se_project_todo-app
