@@ -12,7 +12,7 @@ class TodoCounter {
     this._completed = todos.filter((todo) => todo.completed).length;
     this._updateText();
   }
-
+  // todd
   updateCompleted = (increment) => {
     this._completed += increment ? 1 : -1;
     this._updateText();
