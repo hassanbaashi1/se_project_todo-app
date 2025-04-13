@@ -2,7 +2,7 @@ import { v4 as uuidv4 } from "https://jspm.dev/uuid";
 import { initialTodos, validationConfig } from "../utils/constants.js";
 import Todo from "../components/Todo.js";
 import FormValidator from "../components/FormValidator.js";
-import section from "../components/section.js";
+import Section from "../components/Section.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import TodoCounter from "../components/TodoCounter.js";
 
@@ -27,6 +27,7 @@ const addTodoPopup = new PopupWithForm({
     newTodoValidator.resetValidation();
     renderTodo(values);
     todoCounter.updateTotal(true);
+    addTodoPopup.close();
   },
 });
 
@@ -44,10 +45,10 @@ const generateTodo = (data) => {
 
 const renderTodo = (item) => {
   const todo = generateTodo(item);
-  todosList.append(todo);
+  todoSection.addItem(todo);
 };
 
-const todosection = new section({
+const todoSection = new Section({
   items: initialTodos,
   renderer: (item) => {
     renderTodo(item);
@@ -55,7 +56,7 @@ const todosection = new section({
   containerSelector: ".todos__list",
 });
 
-todosection.renderItems();
+todoSection.renderItems();
 
 addTodoButton.addEventListener("click", () => {
   addTodoPopup.open();
